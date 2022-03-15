@@ -35,6 +35,8 @@ function playRPS() {
 const player = playerSelection()
 const cpu = computerPlay()
 let answer = ""
+let cpuWin = 0
+let playerWin = 0
     
 if (player === 5 ){
      answer = "Please write `Rock`, `Paper` or `Scissors`"} 
@@ -44,26 +46,42 @@ if (player === 5 ){
     } 
     else if ((player === 1) && (cpu === 0)){
         answer = "You win!!! Rock beats Scissors!"
+        //return "Player Loss"
     }
      else if ((player === 0) && (cpu === 1)){
         answer = "You lose!!! Rock beats Scissors!"
+        //return "Player Win"
     }
      else if ((player === 1) && (cpu === 2)){
         answer = "You lose!!! Paper beats Rock!"
+        //return "Player Loss"
     }
     else if ((player === 2) && (cpu === 1)){
         answer = "You win!!! Paper beats Rock!"
+        //return "Player Win"
     } else if ((player === 0) && (cpu === 2)){
         answer = "You Win!!! Scissors beats Paper"
+     //   return "Player Win"
     }
     else if ((player === 2) && (cpu === 0)){
         answer = "You lose!!! Scissors beats Paper"
+        //return "Player Loss"
     }    
     else {
         answer =  "Error 10"
+        //return "Error 10"
     }
 
+    
+/*if (playRPS === "Player Win"){
+    playerWin += 1
+} else if (playRPS === "Player Loss"){
+    cpuWin += 1
+} else {}*/
+    document.querySelector("h4").textContent = `Player score: ${playerWin}, Computer score: ${cpuWin} `
     document.querySelector("h3").textContent = answer
+   
 }
+
 
 document.querySelector("button").addEventListener('click', playRPS)
