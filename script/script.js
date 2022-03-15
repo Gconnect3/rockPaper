@@ -1,10 +1,13 @@
 // Rock paper Scissors
-//have a function call a random number 
-// have a switch statement implement the logic of those numbers to rock paper scissor
+// put a smurf on the button to play the game!
+document.querySelector("button").addEventListener('click', playRPS)
 
+//have a function call a random number 
 function computerPlay() {
     const random = Math.floor(Math.random()*3);
     return random
+
+    //failed function, I was trying to make it more human readable, the function works!
     /*switch (random){
         case 0 : return "Scissors";
         break;
@@ -16,20 +19,23 @@ function computerPlay() {
     }*/
 }
 
-// write a function that takes in the player selection
+// write a function that takes in the player selection and is case insensitive
 
 function playerSelection() {
-    const rock = document.querySelector('input').value.toLowerCase()
-    if (rock === "rock"){
+    const playerInput = document.querySelector('input').value.toLowerCase()
+    if (playerInput === "rock" || playerInput === "r"){
         return 1
-    } else if (rock === "scissor" || rock === "scissors"){
+    } else if (playerInput === "scissor" || playerInput === "scissors" || playerInput === "s"){
         return 0
-    } else if(rock === "paper") {
+    } else if(playerInput === "paper" || playerInput === "p") {
         return 2
     } else { return 5}
 }
+
+// wrote variables keeping track of the score
 let cpuWin = 0
 let playerWin = 0
+
 // write a function that takes both inputs and returns the winner
 
 function playRPS() {
@@ -37,9 +43,12 @@ const player = playerSelection()
 const cpu = computerPlay()
 let answer = ""
 
-    
+//Scissors = 0
+//Rock = 1
+//Paper = 2
+
 if (player === 5 ){
-     answer = "Please write `Rock`, `Paper` or `Scissors`"} 
+     answer = `Please write "Rock" or (R) , "Paper" or (P), "Scissors" or (S)`} 
      
      else if (player === cpu){
          answer = "The game is a Draw!"
@@ -71,25 +80,29 @@ if (player === 5 ){
         answer =  "Error 10"
         
     }
-    
-    document.querySelector("h4").textContent = `Player score: ${playerWin}, Computer score: ${cpuWin} `
+    // after the if statement resolves the text reflects the outcome
+    document.querySelector("h4").textContent = `Player score: ${playerWin}, Computer score: ${cpuWin}`
     document.querySelector("h3").textContent = answer
+
+    // at the end we run the reset function checking to see if the round end has been reached
     reset()
    
 }
 
 
-document.querySelector("button").addEventListener('click', playRPS)
+
 
 
 function reset(){
     if (playerWin === 5){
         playerWin = 0
         cpuWin = 0
+        document.querySelector("h3").textContent = ""
         document.querySelector("h4").textContent = "You Win!"
     } else if (cpuWin === 5){
         playerWin = 0
         cpuWin =0
-        document.querySelector("h4").textContent = "You Lose!"
+        document.querySelector("h3").textContent = ""
+        document.querySelector("h4").textContent = "Rando-Tron wins!!"
     }
 }
