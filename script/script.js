@@ -1,56 +1,33 @@
 // Rock paper Scissors
-// put a smurf on the button to play the game!
-document.querySelector("button").addEventListener('click', playRPS)
 
-//have a function call a random number 
-function computerPlay() {
-    const random = Math.floor(Math.random()*3);
-    return random
 
-    //failed function, I was trying to make it more human readable, the function works!
-    /*switch (random){
-        case 0 : return "Scissors";
-        break;
-        case 1 : return "Rock";
-        break;
-        case 2 : return "Paper";
-        break;
-        default : return "Error"
-    }*/
-}
 
-// write a function that takes in the player selection and is case insensitive
-
-function playerSelection() {
-    const playerInput = document.querySelector('input').value.toLowerCase()
-    if (playerInput === "rock" || playerInput === "r"){
-        return 1
-    } else if (playerInput === "scissor" || playerInput === "scissors" || playerInput === "s"){
-        return 0
-    } else if(playerInput === "paper" || playerInput === "p") {
-        return 2
-    } else { return 5}
-}
+// put a smurf on the images to play the game!
+//Gave values to player input as follows:
+//Scissors = 0
+//Rock = 1
+//Paper = 2
+document.querySelector("#rock").addEventListener('click', () => {playRPS(1)})
+document.querySelector("#paper").addEventListener('click', () => {playRPS(2)})
+document.querySelector("#scissors").addEventListener('click',() => {playRPS(0)})
 
 // wrote variables keeping track of the score
 let cpuWin = 0
 let playerWin = 0
 
+//return a random number: 1,2 or 3 as computer response  
+function computerPlay() {
+    const random = Math.floor(Math.random()*3);
+    return random
+}
+
 // write a function that takes both inputs and returns the winner
 
-function playRPS() {
-const player = playerSelection()
+function playRPS(player) {
 const cpu = computerPlay()
 let answer = ""
 
-//Scissors = 0
-//Rock = 1
-//Paper = 2
-
-if (player === 5 ){
-     answer = `Please write "Rock" or (R) , "Paper" or (P), "Scissors" or (S)`} 
-     
-     else if (player === cpu){
+    if (player === cpu){
          answer = "The game is a Draw!"
     } 
     else if ((player === 1) && (cpu === 0)){
@@ -77,7 +54,7 @@ if (player === 5 ){
         cpuWin += 1
     }    
     else {
-        answer =  "Error 10"
+        answer =  "Error, check logs!"
         
     }
     // after the if statement resolves the text reflects the outcome
@@ -88,10 +65,6 @@ if (player === 5 ){
     reset()
    
 }
-
-
-
-
 
 function reset(){
     if (playerWin === 5){
