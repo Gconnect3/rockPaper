@@ -26,7 +26,7 @@ div > img {
     flex: 1;
     padding: .5rem;
     object-fit: cover;
-    max-width: 20rem;
+    width: 20rem;
     border-radius: 10%;
 }
 
@@ -50,7 +50,7 @@ p {
 
 .vs > img{
     border-radius: 25%;
-    max-width: 15rem;
+    width: 15rem;
 }
 .vs.c, .vs.p {
     margin: 0;
@@ -80,9 +80,9 @@ p {
 
 @media screen and (max-width: 600px) {
     div > img{
-        max-width: 12rem;
+        width: 12rem;
     }
     .vs > img {
-        max-width: 9rem;
+        width: 9rem;
     }
 }
