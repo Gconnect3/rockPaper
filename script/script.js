@@ -22,15 +22,15 @@ function computerPlay() {
 // write a function that takes both inputs and returns the winner
 
 function playRPS(player) {
-const cpu = computerPlay()
-let answer = ""
-const rock = 'img/rock.png'
-const paper = 'img/paper.png'
-const scissors = "img/scissors.png"
-const playerImg = document.querySelector("#player")
-const computerImg = document.querySelector("#computer")
-const vs = document.querySelector('.vs')
-vs.classList.remove('hidden')
+    const cpu = computerPlay()
+    let answer = ""
+    const rock = 'img/rock.png'
+    const paper = 'img/paper.png'
+    const scissors = "img/scissors.png"
+    const playerImg = document.querySelector("#player")
+    const computerImg = document.querySelector("#computer")
+    const vs = document.querySelector('.vs')
+    vs.classList.remove('hidden')
 
 //Scissors = 0
 //Rock = 1
@@ -101,12 +101,8 @@ vs.classList.remove('hidden')
     document.querySelector(".score-player").textContent = `${playerWin}`
     document.querySelector(".score-cpu").textContent = `${cpuWin}`
     document.querySelector("h3").textContent = answer
-   
-
-
     // at the end we run the reset function checking to see if the round end has been reached
-    reset()
-   
+    reset() 
 }
 
 
