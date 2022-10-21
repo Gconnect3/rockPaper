@@ -8,10 +8,10 @@ html {
     font-size: 1.6rem;
 }
 body{
-    align-items: center;
     display: flex;
     flex: 1;
     flex-direction: column;
+    align-items: center;
 }
 div {
     display: flex;
@@ -34,7 +34,6 @@ p {
 }
 
 .vs {
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 4rem;
@@ -47,8 +46,24 @@ p {
 }
 .vs.c, .vs.p {
     margin: 0;
-
     flex-direction: column;
+}
+
+.score {
+    gap: 3rem;
+}
+
+.score > div {
+    white-space: nowrap;
+    flex-direction: column;
+    flex: 1;
+    padding: 2rem;
+}
+
+.score > div > h4{
+    margin: 0;
+    border: solid 2px blue;
+    text-align: center;
 }
 
 .hidden {

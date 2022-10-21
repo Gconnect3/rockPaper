@@ -10,27 +10,41 @@
 <body>
     <p>In a round of 5 games of Rock Paper Scissors, can you beat Rando-Tron?!</p>
 <div>
-    <img id="rock" src="https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Rock" >
-    <img id="paper" src="https://images.unsplash.com/photo-1580679006112-9753b5910fa0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y3J1bXBsZWQlMjBwYXBlciUyMGJhbGx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60">
-    <img id="scissors" src="https://images.unsplash.com/photo-1586941962519-b1a78cf17677?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="Scissors">
+    <!--https://game-icons.net/1x1/john-redman/paper.html
+        https://game-icons.net/1x1/john-redman/rock.html
+        https://game-icons.net/1x1/john-redman/scissors.html
+    -->
+    <img id="rock" src="img/rock.png" alt="Rock hand icon by John Redman" >
+    <img id="paper" src="img/paper.png" alt="Paper hand icon by John Redman">
+    <img id="scissors" src="img/scissors.png" alt="Scissors hand icon by John Redman">
 </div>
 
 <div class="vs hidden">
     <div class="vs p">
-        <h2>Player</h2>
         <img id="player" src="" alt="">
     </div>
     
     <h2>VS</h2>
 
     <div class="vs c">
-        <h2>Rando-Tron</h2>
         <img id="computer" src="" alt="">
     </div>
-   
 </div>
-    <h3></h3>
-    <h4></h4>
+    
+<h3></h3>
+
+
+<div class="score hidden">
+        <div>
+            <h2>Player</h2>
+            <h4 class="score-player"></h4>
+        </div>
+        <div>
+            <h2>Rando-Tron</h2>
+            <h4 class="score-cpu"></h4>
+        </div>
+</div>
+   
 
     <script src="script/script.js"></script>
 </body>

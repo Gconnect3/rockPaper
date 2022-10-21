@@ -24,9 +24,9 @@ function computerPlay() {
 function playRPS(player) {
 const cpu = computerPlay()
 let answer = ""
-const rock = "https://images.unsplash.com/photo-1525857597365-5f6dbff2e36e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-const paper = "https://images.unsplash.com/photo-1580679006112-9753b5910fa0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y3J1bXBsZWQlMjBwYXBlciUyMGJhbGx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60"
-const scissors = "https://images.unsplash.com/photo-1586941962519-b1a78cf17677?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+const rock = 'img/rock.png'
+const paper = 'img/paper.png'
+const scissors = "img/scissors.png"
 const playerImg = document.querySelector("#player")
 const computerImg = document.querySelector("#computer")
 const vs = document.querySelector('.vs')
@@ -97,7 +97,9 @@ vs.classList.remove('hidden')
         
     }
     // after the if statement resolves the text reflects the outcome
-    document.querySelector("h4").textContent = `Player score: ${playerWin} Computer score: ${cpuWin}`
+    document.querySelector(".score").classList.remove('hidden')
+    document.querySelector(".score-player").textContent = `${playerWin}`
+    document.querySelector(".score-cpu").textContent = `${cpuWin}`
     document.querySelector("h3").textContent = answer
    
 
@@ -114,14 +116,14 @@ function reset(){
     if (playerWin === 5){
         playerWin = 0
         cpuWin = 0
+        document.querySelector(".score").classList.add('hidden')
         vs.classList.add("hidden");
-        document.querySelector("h3").textContent = ""
-        document.querySelector("h4").textContent = "You Win!"
+        document.querySelector("h3").textContent = "You Win!"
     } else if (cpuWin === 5){
         playerWin = 0
         cpuWin =0
         vs.classList.add("hidden");
-        document.querySelector("h3").textContent = ""
-        document.querySelector("h4").textContent = "Rando-Tron wins!!"
+        document.querySelector(".score").classList.add('hidden')
+        document.querySelector("h3").textContent = "Rando-Tron wins!!"
     }
 }
